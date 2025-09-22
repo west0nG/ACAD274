@@ -613,11 +613,11 @@
                 var $definition = $(this).next('.term-definition');
                 
                 // Close all definitions first
-                $('.term-definition').slideUp(200);
+                $('.term-definition').hide();
                 
                 // If the clicked definition was not already open, open it
                 if (!$definition.is(':visible')) {
-                    $definition.slideDown(300);
+                    $definition.show();
                 }
             });
 
