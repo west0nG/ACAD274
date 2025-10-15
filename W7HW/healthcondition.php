@@ -78,68 +78,85 @@ echo "</pre>-->";
 </script>
 
 <style>
-    .box, .box2 {
-        background: #fff;
-        color: #111;
-        border-radius: 3px;
-        border: 1px solid #111;
-        font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-        box-shadow: none;
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
         text-align: center;
-        font-weight: bold;
-        letter-spacing: 1px;
-        transition: background 0.2s;
+        margin-bottom: 30px;
+        color: #333;
     }
 
-    .box { 
-        width: 60px; height: 24px; 
-        position: absolute;
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .stat-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        background: #fafafa;
+    }
+
+    .stat-label {
         font-size: 12px;
-        line-height: 24px;
-        background: #fff;
-        color: #111;
-        border: 1px solid #111;
+        color: #666;
+        margin-bottom: 10px;
+        text-transform: uppercase;
     }
-    .box2 { 
-        width: 160px; height: 36px;
-        position: absolute;
-        font-size: 18px; 
-        line-height: 36px;
-        background: #fff;
-        color: #111;
-        border: 2px solid #111;
+
+    .stat-value {
+        font-size: 28px;
         font-weight: bold;
+        color: #333;
     }
 
-    #chart { 
-        width: 400px; 
-        height: 240px; 
-        position: relative;
-        background: #fff;
-        border: 2px solid #111;
-        box-shadow: none;
-        margin: 32px auto 0 auto;
-        border-radius: 10px;
+    .patients-box {
+        grid-column: span 2;
+        background: #e8e8e8;
     }
-
-    #condition { left: 120px; top:40px;}
-    #patients { left: 260px; top:94px;}
-    #avgage { left: 130px; top:130px;}
-    #lowage { left: 128px; top:170px;}
-    #highage { left: 220px; top:170px;}
-
-    /* Remove background image for extreme minimalism */
 </style>
 
-<div id="chart">
-<!-- chart emptied of all by boxes -->
-
-    <div class="box2" id="condition"></div>
-    <div class="box" id="patients"></div>
-    <div class="box" id="avgage"></div>
-    <div class="box" id="lowage"></div>
-    <div class="box" id="highage"></div>
-
+<div class="container">
+    <div class="title" id="condition"></div>
+    
+    <div class="stats">
+        <div class="stat-box patients-box">
+            <div class="stat-label">Total Patients</div>
+            <div class="stat-value" id="patients"></div>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-label">Average Age</div>
+            <div class="stat-value" id="avgage"></div>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-label">Min Age</div>
+            <div class="stat-value" id="lowage"></div>
+        </div>
+        
+        <div class="stat-box">
+            <div class="stat-label">Max Age</div>
+            <div class="stat-value" id="highage"></div>
+        </div>
+    </div>
 </div>
 
 
