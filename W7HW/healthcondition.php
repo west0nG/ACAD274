@@ -131,6 +131,11 @@ echo "</pre>-->";
         grid-column: span 2;
         background: #e8e8e8;
     }
+    .hyperlink-box {
+        grid-column: span 2;
+        background: #e8e8e8;
+        text-align: center;
+    }
 </style>
 
 <div class="container">
@@ -155,6 +160,13 @@ echo "</pre>-->";
         <div class="stat-box">
             <div class="stat-label">Max Age</div>
             <div class="stat-value" id="highage"></div>
+        </div>
+        <div class="hyperlink-box">
+            <a href="healthcondition.php?condition=Aspirin">Aspirin</a>
+            <a href="healthcondition.php?condition=Ibuprofen">Ibuprofen</a>
+            <a href="healthcondition.php?condition=Paracetamol">Paracetamol</a>
+            <a href="healthcondition.php?condition=Penicillin">Penicillin</a>
+            <a href="healthcondition.php?condition=Lipitor">Lipitor</a>
         </div>
     </div>
 </div>
